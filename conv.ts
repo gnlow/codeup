@@ -8,12 +8,13 @@ ${str}
 
 for await (const { name } of Deno.readDir("dist")) {
     if (name.endsWith(".py")) {
+        const source = await Deno.readTextFile("dist/" + name)
         await Deno.writeTextFile(
             "dist/" + name,
             header(
                 await Deno.readTextFile("src/" + name.replace(".py", ".ts"))
             ) +
-            await Deno.readTextFile("dist/" + name)
+            source.replaceAll(/var (.*) = def/g, "def $1")
         )
     }
 }
