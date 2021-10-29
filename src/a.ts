@@ -1,4 +1,4 @@
-import { pipe3 as pipe } from "../util.ts"
+import { pipe } from "../util.ts" // pipe3
 
 const half = (x: number) => Math.floor(x / 2)
 const gauss = (x: number) => (x + 1) * x / 2

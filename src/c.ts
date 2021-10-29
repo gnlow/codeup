@@ -1,4 +1,4 @@
-import { pipe3 as pipe } from "../util.ts"
+import { pipe } from "../util.ts" // pipe3
 
 const double = (x: number) => 2 * x
 
