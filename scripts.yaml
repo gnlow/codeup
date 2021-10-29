@@ -1,0 +1,2 @@
+scripts:
+  conv: npx swc src -d dist && jiphy dist/*.js && deno run -A conv.ts
